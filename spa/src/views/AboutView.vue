@@ -1,6 +1,12 @@
+<script setup>
+import vTableData from '../components/v-table-data.vue'
+</script>
+
+
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <vTableData/>
   </div>
 </template>
 
