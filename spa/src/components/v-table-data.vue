@@ -8,6 +8,7 @@
             <th>Name</th>
             <th>Value</th>
             <th>Action</th>
+            <th>Details</th>
           </tr>
         </thead>
         <tbody>
@@ -19,11 +20,14 @@
               <button @click="showDetails(item)">
                 {{ item.detailsOpen ? 'Close Details' : 'Show Details' }}
               </button>
-              <div v-if="item.detailsOpen">
+              <th>
+                <div v-if="item.detailsOpen">
                 <h2>Details for item {{ item.id }}</h2>
                 <p>Description: {{ item.description }}</p>
-                <p>Created At: {{ this.formatDate(item.date) }}</p>
-</div>
+                <p>Created At: {{item.date }}</p>
+</div></th>
+
+              
             </td>
           </tr>
         </tbody>
@@ -64,12 +68,9 @@
       console.log('showDetails called with item:', item);
       item.detailsOpen = !item.detailsOpen;
     },
-    formatDate(dateString) {
-        const date = new Date(dateString.replace(/[-+]\d{2}:\d{2}$/, ''));
-      const day = date.getDate();
-      const month = date.getMonth() + 1;
-      const year = date.getFullYear();
-      return `${day}/${month}/${year}`;
+    formatDate(item) {
+      const date = new Date(item.date);
+      return date;
     },
   },
     

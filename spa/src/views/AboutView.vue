@@ -5,7 +5,6 @@ import vTableData from '../components/v-table-data.vue'
 
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
     <vTableData/>
   </div>
 </template>
